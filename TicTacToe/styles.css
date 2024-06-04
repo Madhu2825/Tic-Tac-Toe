@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Danfo&display=swap');
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:#E5D4FF;
+    margin: 0;
+    padding: 0;
+    color:blue;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 5px;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.container h1{
+    font-size :40px;
+    padding-top: 50px;
+}
+
+#status {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    color: yellow;
+    font-family: cursive;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 1;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#6EDCD9;
+    border: 2px solid #000;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cell.x::before {
+    content: 'X';
+    background-color: red; /* Light red background for X */
+    color: #ADDDD0; /* Tomato color for X text */
+}
+
+.cell.circle::before {
+    content: 'O';
+    background-color: #e6f7ff; /* Light blue background for O */
+    color: #3B44F6; /* SteelBlue color for O text */
+}
+
+.winning-message {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5px;
+    font-size: 50px;
+    color:cyan;
+    position: absolutes;
+    top: 60%;
+    left: 50%;
+   
+    display: none;
+    z-index: 1;
+}
+
+.winning-message.show {
+    display: flex;
+}
+
+button {
+    
+    padding: 10px 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: #E15FED;  /*Restart button color */
+    border: none;
+    border-radius: 7px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #21a1f1; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .cell {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .cell {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
